@@ -1,0 +1,206 @@
+{% load static %}
+{% block start %}
+
+<style>
+  .footer {
+    background-color: #111;
+    color: #aaa;
+    font-family: 'Inter', sans-serif;
+    padding-top: 30px;
+  }
+
+  .footer-top {
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .footer-logo img {
+    max-width: 150px;
+  }
+
+  .footer-newsletter {
+    text-align: center;
+    color: #fff;
+  }
+
+  .footer-newsletter h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .newsletter-form input {
+    width: calc(100% - 110px);
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px 0 0 5px;
+    background: #222;
+    color: #fff;
+  }
+
+  .newsletter-form button {
+    width: 100px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .newsletter-form button:hover {
+    background-color: #0056b3;
+  }
+
+  .footer-medium {
+    background: #111;
+    padding: 20px 0;
+  }
+
+  .footer-medium .f-link ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .footer-medium .f-link ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+
+  .footer-medium .f-link ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-medium .f-link ul li a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    padding: 20px 0;
+    font-size: 0.85rem;
+    text-align: center;
+    border-top: 1px solid #333;
+  }
+
+  .payment-gateway img {
+    width: 150px;
+  }
+
+  .socila {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .socila li {
+    margin: 0 10px;
+  }
+
+  .socila li a {
+    color: #a71c1c;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+
+  .socila li a:hover {
+    color: #007bff;
+  }
+
+  .scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    display: none;
+    z-index: 10;
+  }
+
+  .scroll-top:hover {
+    background: #0056b3;
+  }
+</style>
+
+<footer class="footer">
+  <a href="#" class="scroll-top">
+    <i class="lni lni-chevron-up"></i>
+  </a>
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-md-4 col-12">
+          <div class="footer-logo text-center">
+            <a href="/">
+              <img src="{% static 'images/logo-white.png' %}" alt="Logo" />
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-8 col-12">
+          <div class="footer-newsletter">
+            <h4 class="title">
+              Subscribe to our Newsletter
+              <span>Get the latest updates, offers, and more!</span>
+            </h4>
+            <form class="newsletter-form">
+              <input
+                name="email"
+                placeholder="Your email address..."
+                type="email"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-medium">
+    <div class="container">
+      <div class="f-link">
+        <ul>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'shipping-address' %}">Shipping</a></li>
+          <li><a href="{% url 'terms-and-conditions' %}">Terms</a></li>
+          <li><a href="{% url 'privacy-policy' %}">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div>
+        <div class="payment-gateway">
+          <span>We Accept:</span>
+          <img src="{% static 'images/credit-cards-footer.png' %}" alt="Accepted Payments" />
+        </div>
+        <p>
+          © 2024 Designed by 
+          <a href="https://austin0x1A4.github.io" target="_blank">Austin</a>.
+          All Rights Reserved.
+        </p>
+        <ul class="socila">
+          <li><a href="https://linkedin.com" target="_blank"><i class="lni lni-linkedin"></i></a></li>
+          <li><a href="https://github.com" target="_blank"><i class="lni lni-github"></i></a></li>
+          <li><a href="https://instagram.com" target="_blank"><i class="lni lni-instagram"></i></a></li>
+          <li><a href="https://facebook.com" target="_blank"><i class="lni lni-facebook-filled"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% endblock %}
