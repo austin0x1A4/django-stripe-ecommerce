@@ -9,8 +9,6 @@ from django.core.validators import validate_email
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # Create your views here.
-
-
 def index(request):
     query = Product.objects.all()
     categories = Category.objects.all()

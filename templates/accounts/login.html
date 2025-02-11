@@ -57,11 +57,17 @@
               <p class="text-center mt-4">
                 Don't have account? <a href="{% url 'register' %}">Sign up</a>
               </p>
-
+                 <!--
               <div class="line"></div>
 
               <div class="media-options">
-                
+                Google Login Button 
+              <div class="form-group text-center">
+                <a href="{% provider_login_url 'google' %}" class="btn btn-danger btn-block">
+                  <i class="fab fa-google"></i> Login with Google
+                </a>
+              </div>
+                -->
             </form>
           </div>
         </div>
@@ -70,5 +76,4 @@
   </div>
 </section>
 <!-- ============================ COMPONENT LOGIN END ================================= -->
-
 {% endblock %}

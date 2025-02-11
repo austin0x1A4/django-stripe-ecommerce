@@ -7,9 +7,6 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-e5t3=jvhc4umc4rt&mfeloaa7wikr!8b_cy5i31y+30o+4kr@y'
 
@@ -19,9 +16,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
-
-SITE_ID = 2 #added this line
+SITE_ID = 1 #added this line
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,7 +37,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google', # For Google authentication
-    'allauth.socialaccount.providers.facebook', # For Facebook authentication
+    #'allauth.socialaccount.providers.facebook', # For Facebook authentication
 
     # Added belows line for crispy forms
     'django_countries',
@@ -94,6 +89,19 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 '''
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'CLIENT_ID': 'S757930875922-u8u7qb2i77oc9skh398no6kelnan3mgc.apps.googleusercontent.com',
+        'SECRET': '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',
+    }
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -196,7 +204,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'rbnndng@gmail.com'
-EMAIL_HOST_PASSWORD = 'ceyf john suhz rrrc'
+EMAIL_HOST_PASSWORD = 'hvnl resx zvjc xsgi'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_USE_SSL = False
 
